@@ -1,0 +1,2082 @@
+/* ==========================================
+   1. ƏSAS AYARLAR VƏ DƏYİŞƏNLƏR
+   ========================================== */
+:root {
+  --primary-color: #0d47a1;
+  --primary-hover: #082d6c;
+  --secondary-color: #1976d2;
+  --text-dark: #1a1a1a;
+  --text-light: #555555;
+  --bg-light: #f8f9fa;
+  --white: #ffffff;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+body {
+  background-color: var(--white);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+/* ==========================================
+   2. HEADER / NAVIGATION (Enturf Stili)
+   ========================================== */
+.header {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 12px 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.logo-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--primary-color);
+}
+
+.header-contact {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-callback {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.btn-callback:hover {
+  background-color: var(--primary-hover);
+}
+
+.header-phone {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+
+/* =========================
+   HERO - DENIS REINIGUNG
+========================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  min-height: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("images/comfortable-white-home-office-interior.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  text-align: center;
+  overflow: hidden;
+}
+
+/* HERO CONTENT */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(90%, 850px);
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* WHITE TRANSPARENT BOX */
+
+.hero-box {
+  width: 100%;
+  padding: 16px 25px;
+
+  background: rgba(255, 255, 255, 0.78);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  border-radius: 15px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+/* HEADLINE */
+
+.hero-box h1 {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.8px;
+
+  color: #18365f;
+}
+
+.hero-box h1 strong {
+  font-weight: 800;
+  color: #173b70;
+}
+
+/* SUBTITLE */
+
+.hero-box p {
+  margin: 2px 0 0;
+  padding: 0;
+
+  font-size: clamp(13px, 1.5vw, 18px);
+  font-weight: 500;
+  line-height: 1.4;
+
+  color: #243b59;
+}
+
+/* BUTTON */
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 9px 20px;
+
+  background: #174d8c;
+  color: #ffffff;
+
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  background: #103763;
+  transform: translateY(-2px);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .hero {
+    height: 280px;
+    min-height: 280px;
+  }
+
+  .hero-content {
+    width: 90%;
+  }
+
+  .hero-box {
+    padding: 15px 20px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .hero {
+    height: 300px;
+    min-height: 300px;
+    background-position: center;
+  }
+
+  .hero-content {
+    width: 94%;
+  }
+
+  .hero-box {
+    padding: 18px 12px;
+    border-radius: 12px;
+  }
+
+  .hero-box h1 {
+    font-size: 23px;
+    line-height: 1.35;
+  }
+
+  .hero-box p {
+    font-size: 13px;
+    margin-top: 7px;
+  }
+
+  .hero-button {
+    font-size: 12px;
+    padding: 9px 17px;
+  }
+}
+
+
+/* ==========================================
+   4. ÜMUMİ SEKSİYALAR & XİDMƏTLƏR
+   ========================================== */
+.section {
+  padding: 70px 0;
+}
+
+.impressum-section {
+  background-color: var(--bg-light);
+}
+
+.legal-content {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 35px;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.legal-content h2,
+.legal-content h3 {
+  color: var(--primary-color);
+}
+
+.legal-content h2 {
+  margin-bottom: 20px;
+}
+
+.legal-content h3 {
+  margin: 28px 0 10px;
+  font-size: 1.2rem;
+}
+
+.legal-content p {
+  margin-bottom: 16px;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.legal-content a {
+  color: var(--primary-color);
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.section-heading h2 {
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.section-heading p {
+  color: var(--text-light);
+}
+
+.services {
+  background-color: var(--bg-light);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--secondary-color);
+  opacity: 0.3;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.service-card p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.service-card a {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   5. QALEREYA BÖLMƏSİ (İki Sətirli Qrafik)
+   ========================================== */
+.gallery-section {
+  background-color: var(--white);
+}
+
+.gallery-category {
+  margin-bottom: 50px;
+}
+
+.gallery-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--bg-light);
+}
+
+.gallery-heading h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border: none;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.zoom-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: rgba(13, 71, 161, 0.8);
+  color: var(--white);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item:hover .zoom-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ==========================================
+   6. ÜBER UNS VƏ KONTAKT
+   ========================================== */
+.about {
+  background-color: var(--bg-light);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.about-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.about-content p {
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+.btn-dark {
+  background-color: var(--text-dark);
+  color: var(--white);
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.btn-dark:hover {
+  background-color: #333;
+}
+
+.contact-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.contact-content .section-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact-content p {
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.btn-light {
+  background-color: var(--white);
+  color: var(--primary-color);
+  padding: 12px 25px;
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  display: inline-block;
+}
+
+.btn-light:hover {
+  background-color: #f0f0f0;
+}
+
+
+/* ==============================
+   DENIS FOOTER
+============================== */
+
+.footer {
+  --footer-color: #07366B;
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* DALĞA */
+
+.footer-wave {
+  width: 100%;
+  height: 160px;
+  line-height: 0;
+  background: #ffffff;
+}
+
+.footer-wave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ƏSAS FOOTER */
+
+.footer-main {
+  background: var(--footer-color);
+  padding: 35px 0 30px;
+  margin-top: -1px;
+}
+
+/* 3 SÜTUN */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 65px;
+  padding-bottom: 65px;
+  align-items: start;
+}
+
+/* SÜTUNLAR ARASINDA XƏTT */
+
+.footer-service {
+  margin-bottom: 20px;
+}
+
+.footer-service h4 {
+  margin: 0 0 5px;
+}
+
+.footer-service p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* LOGO */
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer-logo img {
+  display: block;
+  width: 105px;
+  height: 105px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.footer-logo-divider {
+  display: block;
+  width: 2px;
+  height: 85px;
+  background: rgba(255,255,255,0.85);
+  flex-shrink: 0;
+}
+
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.footer-logo-text strong {
+  font-size: 37px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.footer-logo-text small {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.footer-brand p {
+  margin-top: 28px;
+  max-width: 390px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #e2eaf5;
+}
+
+/* SÜTUN BAŞLIQLARI */
+
+.footer-column h3 {
+  font-size: 25px;
+  font-weight: 700;
+  margin: 5px 0 35px;
+  color: #ffffff;
+}
+
+/* LEISTUNGEN */
+
+.footer-service {
+  margin-bottom: 30px;
+}
+
+.footer-service h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px;
+}
+
+.footer-service p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #e2eaf5;
+  margin: 0;
+}
+
+/* KONTAKT */
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 23px;
+}
+
+.footer-contact h3 {
+  margin-bottom: 12px;
+}
+
+.footer-contact a {
+  font-size: 16px;
+  color: #e2eaf5;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  overflow-wrap: anywhere;
+}
+
+.footer-contact a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ALT HİSSƏ */
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.35);
+  padding-top: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #e2eaf5;
+  margin: 0;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.footer-legal a {
+  font-size: 14px;
+  color: #e2eaf5;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  text-decoration: underline;
+}
+
+/* YUXARI QAYIT */
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+
+  font-size: 25px;
+  color: #ffffff;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: 0.3s;
+}
+
+.footer-top:hover {
+  background: #ffffff;
+  color: var(--footer-color);
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+
+  .footer-grid {
+    gap: 30px;
+    grid-template-columns: 1.1fr 1fr 1fr;
+  }
+
+  .footer-brand,
+  .footer-services {
+    padding-right: 25px;
+  }
+
+  .footer-logo img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .footer-logo-divider {
+    height: 65px;
+  }
+
+  .footer-logo-text strong {
+    font-size: 28px;
+  }
+
+  .footer-logo-text small {
+    font-size: 13px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+
+  .footer-wave {
+    height: 95px;
+  }
+
+  .footer-main {
+    padding-top: 25px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-bottom: 30px;
+  }
+
+  .footer-brand,
+  .footer-services {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    padding-right: 0;
+    padding-bottom: 25px;
+    min-height: auto;
+  }
+
+  .footer-logo img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .footer-logo-divider {
+    height: 60px;
+  }
+
+  .footer-logo-text strong {
+    font-size: 28px;
+  }
+
+  .footer-logo-text small {
+    font-size: 13px;
+  }
+
+  .footer-column h3 {
+    font-size: 22px;
+    margin-bottom: 22px;
+  }
+
+  .footer-contact {
+    gap: 17px;
+  }
+
+  .footer-bottom {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer-bottom p {
+    width: 100%;
+  }
+
+  .footer-top {
+    margin-left: auto;
+  }
+}
+
+
+/* ==========================================
+   8. ADAPTİV DİZAYN (RESPONSIVE)
+   ========================================== */
+@media (max-width: 992px) {
+  .nav {
+    display: none;
+  }
+  
+  .nav.is-open {
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    min-width: 220px;
+    padding: 10px;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+  }
+
+  .nav.is-open a {
+    padding: 12px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-contact {
+    display: none;
+  }
+  
+  .hero-card {
+    padding: 30px 20px;
+  }
+
+  .hero-card h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-card h1 small {
+    font-size: 1.1rem;
+  }
+
+  .gallery-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+/* =====================================
+   HERO - NEUES DESIGN
+===================================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  min-height: 330px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: url("images/comfortable-white-home-office-interior.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Alte dunkle Überlagerung entfernen */
+
+.hero .hero-overlay {
+  display: none;
+}
+
+.hero::before {
+  content: none;
+}
+
+/* HERO INHALT */
+
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(90%, 850px);
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  text-align: center;
+}
+
+/* TRANSPARENTE WEISSE BOX */
+
+.hero .hero-box {
+  width: 100%;
+  padding: 17px 25px;
+
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 15px;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* ÜBERSCHRIFT */
+
+.hero .hero-box h1 {
+  display: block;
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(24px, 2.8vw, 37px);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.8px;
+
+  color: #193b67;
+}
+
+.hero .hero-box h1 strong {
+  font-weight: 800;
+  color: #173b70;
+}
+
+/* UNTERTITEL */
+
+.hero .hero-box p {
+  width: 100%;
+  max-width: none;
+
+  margin: 3px 0 0;
+  padding: 0;
+
+  font-size: clamp(14px, 1.5vw, 18px);
+  font-weight: 500;
+  line-height: 1.4;
+
+  color: #243b59;
+}
+
+/* BLAUER BUTTON */
+
+.hero .hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
+  margin: 0;
+  padding: 10px 22px;
+
+  background: #174d8c;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 9px;
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.hero .hero-button:hover {
+  background: #103763;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .hero {
+    height: 300px;
+    min-height: 300px;
+  }
+
+  .hero .hero-content {
+    width: 90%;
+  }
+
+  .hero .hero-box {
+    padding: 17px 20px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .hero {
+    height: 300px;
+    min-height: 300px;
+    background-position: center;
+  }
+
+  .hero .hero-content {
+    width: 94%;
+    gap: 12px;
+  }
+
+  .hero .hero-box {
+    padding: 18px 12px;
+    border-radius: 12px;
+  }
+
+  .hero .hero-box h1 {
+    font-size: 23px;
+    line-height: 1.35;
+  }
+
+  .hero .hero-box p {
+    font-size: 13px;
+    margin-top: 7px;
+  }
+
+  .hero .hero-button {
+    font-size: 12px;
+    padding: 10px 18px;
+  }
+}
+
+/* HERO FOTO ANPASSUNG */
+
+.hero {
+  height: 350px;
+  min-height: 350px;
+
+  background-image: url("images/Professionelle\ Reinigung\ im\ Behandlungsraum.png");
+  background-size: cover;
+  background-position: center 45%;
+  background-repeat: no-repeat;
+}
+
+/* DESKTOP: Bild proportional darstellen */
+
+@media (min-width: 1100px) {
+  .hero {
+    height: 400px;
+    min-height: 400px;
+    background-position: center 48%;
+  }
+}
+
+/* TABLET */
+
+@media (min-width: 601px) and (max-width: 1099px) {
+  .hero {
+    height: 340px;
+    min-height: 340px;
+    background-position: center 45%;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .hero {
+    height: 350px;
+    min-height: 350px;
+    background-position: 48% center;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo-divider {
+  width: 2px;
+  height: 62px;
+  background: #263b92;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  color: #263b92;
+}
+
+.logo-text strong {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.logo-text small {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    gap: 9px;
+  }
+
+  .logo-img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logo-divider {
+    height: 42px;
+  }
+
+  .logo-text strong {
+    font-size: 23px;
+  }
+
+  .logo-text small {
+    font-size: 11px;
+  }
+}
+
+
+/* ================================
+   BÜRO GALERIE - HORIZONTAL SLIDER
+================================ */
+
+
+/* ==================================
+   GALERIE SLIDER - BÜRO UND PRAXIS
+================================== */
+
+.gallery-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Horizontal scroll */
+
+.gallery-slider .gallery-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  grid-template-columns: none;
+
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  padding: 5px 0;
+}
+
+.gallery-slider .gallery-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Photos: 4 visible on desktop */
+
+.gallery-slider .gallery-item {
+  flex: 0 0 calc((100% - 48px) / 4);
+  width: auto;
+  min-width: 0;
+
+  aspect-ratio: 4 / 3;
+  scroll-snap-align: start;
+}
+
+/* Navigation arrows */
+
+.gallery-slider .slider-arrow {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+
+  background: #174d8c;
+  color: white;
+
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition: background 0.3s ease;
+}
+
+.gallery-slider .slider-arrow:hover {
+  background: #103763;
+}
+
+.gallery-slider .slider-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* Tablet: 2 photos */
+
+@media (max-width: 900px) {
+  .gallery-slider .gallery-item {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+}
+
+/* Mobile: 1 photo */
+
+@media (max-width: 600px) {
+  .gallery-slider {
+    gap: 6px;
+  }
+
+  .gallery-slider .gallery-grid {
+    gap: 10px;
+  }
+
+  .gallery-slider .gallery-item {
+    flex-basis: 85%;
+  }
+
+  .gallery-slider .slider-arrow {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+  }
+}
+
+
+/* FOTOLAR */
+
+#buero-galerie .gallery-item {
+  flex: 0 0 calc((100% - 48px) / 4);
+  width: auto;
+  aspect-ratio: 4 / 3;
+  scroll-snap-align: start;
+}
+
+/* OX DÜYMƏLƏRİ */
+
+#buero-galerie .slider-arrow {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #174d8c;
+  color: white;
+
+  border: none;
+  border-radius: 50%;
+
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+
+  transition: background 0.3s;
+}
+
+#buero-galerie .slider-arrow:hover {
+  background: #0c305b;
+}
+
+#buero-galerie .slider-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  #buero-galerie .gallery-item {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  #buero-galerie .gallery-slider {
+    gap: 6px;
+  }
+
+  #buero-galerie .gallery-grid {
+    gap: 10px;
+  }
+
+  #buero-galerie .gallery-item {
+    flex-basis: 85%;
+    aspect-ratio: 4 / 3;
+  }
+
+  #buero-galerie .slider-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+  }
+}
+
+
+/* ==================================
+   LIGHTBOX - FOTO VERGRÖSSERN
+================================== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px;
+  background: rgba(5, 15, 30, 0.94);
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  display: block;
+  width: auto;
+  height: auto;
+
+  max-width: 95%;
+  max-height: 85vh;
+
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+
+  background: transparent;
+  border: none;
+  color: white;
+
+  font-size: 44px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.gallery-item {
+  cursor: zoom-in;
+}
+
+@media (max-width: 600px) {
+  .lightbox {
+    padding: 15px;
+  }
+
+  .lightbox-close {
+    top: 10px;
+    right: 15px;
+  }
+}
+
+/* GALERIE SLIDER - FINAL */
+
+.gallery-section {
+  overflow: hidden;
+}
+
+.gallery-category {
+  width: 100%;
+  min-width: 0;
+}
+
+.gallery-slider {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+.gallery-slider .gallery-grid {
+  display: flex;
+  flex: 1 1 0;
+  flex-wrap: nowrap;
+  grid-template-columns: none;
+  gap: 16px;
+
+  width: 0;
+  min-width: 0;
+  max-width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.gallery-slider .gallery-grid::-webkit-scrollbar {
+  display: none;
+}
+
+#praxis-galerie .gallery-slider .gallery-item,
+#buero-galerie .gallery-slider .gallery-item {
+  flex: 0 0 calc((100% - 48px) / 4);
+  width: auto;
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+  scroll-snap-align: start;
+}
+
+.gallery-slider .slider-arrow {
+  position: static;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+
+  background: #174d8c;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.gallery-slider .slider-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  #praxis-galerie .gallery-slider .gallery-item,
+  #buero-galerie .gallery-slider .gallery-item {
+    flex-basis: calc((100% - 16px) / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-slider {
+    gap: 6px;
+  }
+
+  .gallery-slider .gallery-grid {
+    gap: 10px;
+  }
+
+  #praxis-galerie .gallery-slider .gallery-item,
+  #buero-galerie .gallery-slider .gallery-item {
+    flex-basis: 85%;
+  }
+
+  .gallery-slider .slider-arrow {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+  }
+}
+/* Unsere Leistungen başlığı ilə xidmətlər arasındakı məsafə */
+.footer-services > h3 {
+  margin-bottom: 35px !important;
+}
+
+/* Xidmət başlığı ilə açıqlaması arasındakı məsafə */
+.footer-service h4 {
+  margin: 0 0 5px !important;
+}
+
+.footer-service p {
+  margin: 0 !important;
+  line-height: 1.5;
+}
+
+/* İki xidmət bloku arasındakı məsafə */
+.footer-service {
+  margin-bottom: 30px;
+  gap: 0;
+}
+
+/* Telefon nömrələrini böyüt */
+.footer-contact a[href^="tel:"] {
+  font-size: 21px;
+  font-weight: 600;
+}
+/* MODERN NAVIGATION */
+
+.header {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 4px 24px rgba(7, 54, 107, 0.07);
+  transition: box-shadow 0.3s ease;
+}
+
+.header:hover {
+  box-shadow: 0 6px 30px rgba(7, 54, 107, 0.12);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 17px;
+  border-radius: 30px;
+  color: #173b69;
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav a:hover {
+  background: #eaf2fc;
+  color: #0758aa;
+  transform: translateY(-2px);
+}
+
+/* Kontakt düyməsi */
+.nav a[href="#kontakt"] {
+  background: #07366B;
+  color: white;
+  padding: 12px 23px;
+}
+
+.nav a[href="#kontakt"]:hover {
+  background: #176bc2;
+  color: white;
+  box-shadow: 0 6px 18px rgba(7,54,107,0.22);
+}
+
+@media (max-width: 768px) {
+
+  /* Menyu bağlı olanda */
+  .header .nav {
+    display: none;
+  }
+
+  /* Hamburgerə basanda menyu açılsın */
+  .header .nav.active,
+  .header .nav.open,
+  .header .nav.is-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    z-index: 1000;
+  }
+
+  .header {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Açılan menyunun ölçüsü */
+  .header .nav.active,
+  .header .nav.open,
+  .header .nav.is-open {
+    position: absolute;
+    top: calc(100% - 5px);
+    left: auto;
+    right: 15px;
+
+    width: 260px;
+    max-width: calc(100vw - 30px);
+
+    padding: 12px;
+    gap: 3px;
+
+    background: #ffffff;
+    border: 1px solid rgba(7, 54, 107, 0.08);
+    border-radius: 16px;
+
+    box-shadow: 0 12px 35px rgba(7, 54, 107, 0.15);
+    z-index: 1000;
+  }
+
+  /* Menyu linkləri */
+  .header .nav a {
+    display: block;
+    width: 100%;
+    padding: 11px 15px;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4;
+    text-align: left;
+    border-radius: 9px;
+  }
+
+  /* Hover */
+  .header .nav a:hover {
+    background: #edf4fc;
+    color: #07366B;
+    transform: none;
+  }
+
+  /* Kontakt düyməsi */
+  .header .nav a[href="#kontakt"] {
+    margin-top: 5px;
+    padding: 12px 15px;
+    text-align: center;
+    border-radius: 9px;
+  }
+}
+
+/* INSTAGRAM GALERIE */
+
+.gallery-instagram {
+  max-width: 720px;
+  margin: 65px auto 20px;
+  padding: 45px 30px;
+  text-align: center;
+  background: #f4f7fb;
+  border: 1px solid #e1eaf4;
+  border-radius: 24px;
+}
+
+.instagram-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #e5effb;
+  color: #07366B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+}
+
+.gallery-instagram h3 {
+  color: #07366B;
+  font-size: 26px;
+  margin: 0 0 14px;
+}
+
+.gallery-instagram p {
+  color: #53667c;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0 auto 25px;
+  max-width: 520px;
+}
+
+.instagram-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #07366B;
+  color: #ffffff;
+  padding: 15px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.instagram-btn:hover {
+  background: #176bc2;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(7,54,107,0.2);
+}
+
+@media (max-width: 600px) {
+  .gallery-instagram {
+    margin-top: 40px;
+    padding: 35px 20px;
+  }
+
+  .gallery-instagram h3 {
+    font-size: 22px;
+  }
+
+  .instagram-btn {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+}
+
+.gallery-item {
+  overflow: hidden;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.gallery-item img {
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(7,54,107,0.16);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.service-card {
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(7,54,107,0.12);
+  border-color: #b8d3f0;
+}
+
+.btn {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(7,54,107,0.2);
+}
+
+/* FLOATING INSTAGRAM BUTTON */
+
+.floating-instagram {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  z-index: 9999;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #07366B;
+  color: #ffffff;
+  border-radius: 50%;
+
+  box-shadow: 0 6px 20px rgba(7, 54, 107, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.floating-instagram svg {
+  width: 25px;
+  height: 25px;
+}
+
+.floating-instagram:hover {
+  background: #176bc2;
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(7, 54, 107, 0.35);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .floating-instagram {
+    width: 46px;
+    height: 46px;
+    right: 15px;
+    bottom: 80px;
+  }
+
+  .floating-instagram svg {
+    width: 23px;
+    height: 23px;
+  }
+}
+
+/* UNSERE LEISTUNGEN – CLEANING BACKGROUND */
+
+#leistungen {
+  background-image: url("images/glasreinigung.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+#leistungen .section-heading .section-label {
+  color: #07366B;
+}
+
+#leistungen .section-heading h2 {
+  color: #07366B;
+}
+
+#leistungen .section-heading p {
+  color: #244b73;
+}
+
+
+#leistungen .service-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(7, 54, 107, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#leistungen .service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(7, 54, 107, 0.22);
+}
+
+
+@media (max-width: 768px) {
+  #leistungen {
+    background-position: center;
+  }
+}
+
+/* GALERIE → ÜBER UNS KEÇİDİ */
+
+#galerie {
+  padding-bottom: 35px;
+}
+
+.section-transition {
+  height: 35px;
+  background: #ffffff;
+  line-height: 0;
+}
+
+.section-transition svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Über uns bölməsini yuxarı yaxınlaşdır */
+
+#ueber-uns {
+  padding-top: 40px;
+}
+
+/* Mobil versiya */
+
+@media (max-width: 768px) {
+  #galerie {
+    padding-bottom: 25px;
+  }
+
+  #ueber-uns {
+    padding-top: 30px;
+  }
+
+  .section-transition {
+    height: 25px;
+  }
+}
+
+.section-transition svg path {
+  stroke: #8DB8E0;
+  stroke-width: 6px;
+}
