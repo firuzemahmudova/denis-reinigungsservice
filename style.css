@@ -2080,3 +2080,22 @@ a {
   stroke: #8DB8E0;
   stroke-width: 6px;
 }
+
+
+.footer-credit {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+}
+
+.footer-credit a {
+  color: #aaa;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-credit a:hover {
+  color: #c82333;
+}
