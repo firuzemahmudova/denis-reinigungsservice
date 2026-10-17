@@ -2054,7 +2054,6 @@ a {
   height: 100%;
 }
 
-/* Über uns bölməsini yuxarı yaxınlaşdır */
 
 #ueber-uns {
   padding-top: 40px;
@@ -2111,11 +2110,13 @@ a {
 }
 
 .footer-credit a {
-  color: #ffffff;
+  color: #69bcbc;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .footer-credit a:hover {
+  color: #8dd4d4;
   text-decoration: underline;
 }
 
