@@ -2099,3 +2099,23 @@ a {
 .footer-credit a:hover {
   color: #c82333;
 }
+
+
+.footer-credit {
+  background: #0b3568;
+  color: rgba(255, 255, 255, 0.65);
+  text-align: center;
+  padding: 12px 0 18px;
+  margin: 0;
+  font-size: 13px;
+}
+
+.footer-credit a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-credit a:hover {
+  text-decoration: underline;
+}
+
